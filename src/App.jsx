@@ -8,7 +8,7 @@ function App() {
   let deny = ["text-muted", "fas fa-times"]
   let details = [
     {
-      title: "FREE",
+      plan: "FREE",
       price: 0,
       user: "Single User",
       storage: "50GB Storage",
@@ -21,7 +21,7 @@ function App() {
     },
 
     {
-      title: "PLUS",
+      plan: "PLUS",
       price: 9,
       user: "5 User",
       storage: "50GB Storage",
@@ -34,7 +34,7 @@ function App() {
     },
 
     {
-      title: "PRO",
+      plan: "PRO",
       price: 49,
       user: "Unlimited User",
       storage: "50GB Storage",
