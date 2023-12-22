@@ -1,23 +1,26 @@
 import React from "react";
-import "./App.css";
-import "./components/Card"
+import "./components/Card";
 import Card from "./components/Card";
 
 function App() {
   let allow = ["", "fas fa-check"];
-  let deny = ["text-muted", "fas fa-times"]
+  let deny = ["text-muted", "fas fa-times"];
   let details = [
     {
       plan: "FREE",
       price: 0,
       user: "Single User",
       storage: "50GB Storage",
-      publicProjects:"Unlimited Public Projects",
+      publicProjects: "Unlimited Public Projects",
       access: "Community Access",
-      privateProjects: ["Unlimited Private Projects", ...deny],
-      phoneSupport: ["Dedicated Phone Support", ...deny],
-      subdomain: ["Free Subdomain", ...deny],
-      statusReports: ["Monthly Status Reports", ...deny],
+      privateProjects: "Unlimited Private Projects",
+      isPrivateProjects: false,
+      phoneSupport: "Dedicated Phone Support",
+      isPhoneSupport: false,
+      subdomain: "Free Subdomain",
+      isSubdomain: false,
+      statusReports: "Monthly Status Reports",
+      isStatusReports: false,
     },
 
     {
@@ -27,10 +30,14 @@ function App() {
       storage: "50GB Storage",
       publicProjects: "Unlimited Public Projects",
       access: "Community Access",
-      privateProjects: ["Unlimited Private Projects", ...allow],
-      phoneSupport: ["Dedicated Phone Support", ...allow],
-      subdomain: ["Free Subdomain", ...allow],
-      statusReports: ["Monthly Status Reports", ...deny],
+      privateProjects: "Unlimited Private Projects",
+      isPrivateProjects: true,
+      phoneSupport: "Dedicated Phone Support",
+      isPhoneSupport: true,
+      subdomain: "Free Subdomain",
+      isSubdomain: true,
+      statusReports: "Monthly Status Reports",
+      isStatusReports: false,
     },
 
     {
@@ -40,10 +47,14 @@ function App() {
       storage: "50GB Storage",
       publicProjects: "Unlimited Public Projects",
       access: "Community Access",
-      privateProjects: ["Unlimited Private Projects", ...allow],
-      phoneSupport: ["Dedicated Phone Support", ...allow],
-      subdomain: ["Free Subdomain", ...allow],
-      statusReports: ["Monthly Status Reports", ...allow],
+      privateProjects: "Unlimited Private Projects",
+      isPrivateProjects: true,
+      phoneSupport: "Dedicated Phone Support",
+      isPhoneSupport: true,
+      subdomain: "Free Subdomain",
+      isSubdomain: true,
+      statusReports: "Monthly Status Reports",
+      isStatusReports: true,
     },
   ];
   return (
@@ -51,12 +62,8 @@ function App() {
       <section className="pricing py-5">
         <div className="container">
           <div className="row">
-            {details.map((e, i)=>{
-              return (
-              
-              <Card futures={e} key={i}/>
-              
-              )
+            {details.map((e, i) => {
+              return <Card data={e} key={i} />;
             })}
           </div>
         </div>
